@@ -1,0 +1,303 @@
+\documentclass[12pt]{report}
+
+% this enables correct linespacing and graphics inclusion via 
+%``\includegraphics''
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Comment this out before generating final draft
+\setlength{\marginparwidth}{2cm}
+
+%
+\usepackage{pdfpages}
+\usepackage[toc,page]{appendix}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{subfigure}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+
+% leave 1.5in margin to the left and 1in margin to the other
+% sides. Don't print page number in the margin (but rather above it)
+\setlength{\textheight}{8.63in}
+\setlength{\textwidth}{5.9in}
+\setlength{\topmargin}{-0.2in}
+\setlength{\oddsidemargin}{0.3in}
+\setlength{\evensidemargin}{0.3in}
+\setlength{\headsep}{0.0in}
+
+
+
+% Start 
+% =================================================
+\begin{document}
+	
+%forces some specially formatted text to wrap to the next line if it overfills h-box
+\sloppy
+
+% First things first: The Titlepage
+% This is the recommended format by the library
+%
+
+
+% Define \brk as a command for leaving a little vertical space. Makes
+% the titlepage easier to read - normally, this is NOT GOOD LATEX
+% STYLE!!!
+%
+\newcommand{\brk}{\vspace*{0.18in}}
+
+% No page number on the title page
+\thispagestyle{empty}
+
+% Center the whole title page
+\begin{center}
+
+\brk
+
+% Large font and bold face for the headline. Try to keep it at one or
+% two lines. Headlines over two lines will mess up the spacing, and you have to
+% manually finetune it. Note that the line break in the SOURCE CODE
+% does not affect the line breaking in the output file. If you want
+% hardcoded line breaks, you have to mark them with a double backslash (\\)
+
+   {\large 
+	\textbf{
+	 Placeholder Title
+	}
+   }
+
+
+\brk
+by
+
+\brk
+% insert your name here. 
+Maximilian Thompson
+
+% All this is constant:
+\brk\brk
+A Major Qualifying Project
+
+\brk
+Submitted to the Faculty
+
+\brk
+of the 
+
+\brk
+WORCESTER POLYTECHNIC INSTITUTE
+	
+\brk
+In partial fulfillment of the requirements for the
+
+\brk
+Degree of Bachelor of Science
+
+\brk
+in Computer Science
+
+\brk
+
+
+\brk
+by
+
+% This is how LaTeX draws lines :) It's where your signature goes.
+\brk\brk
+\rule{3in}{1.2pt}
+
+% Adjust this to your preferred month and year
+\brk
+May 2021
+
+\end{center}
+
+	
+\vfill
+APPROVED:
+
+\vspace{0.5in}
+\rule{3in}{0.8pt}
+
+% Change this 
+Smith, Therese
+
+% end of titlepage
+\newpage
+
+% This is the command for doublespacing when you use the setspace
+% package
+% Please do NOT use \baselinestretch, this will mess up everything,
+% cause earthquakes, tornados and lots of questions for me...
+% If you need a singlespaced paragraph (BAD STYLE!!!), use
+% \singlespacing or \onehalfspacing and enclose it together with the
+% paragraph in braces {\singlespacing This is my text... blah blah blah}
+%
+\doublespacing
+
+
+\begin{abstract}
+Placeholder abstract
+\end{abstract}
+
+% Roman page numbers for front matter
+
+\pagenumbering{roman} % or {Roman} if you like them capitalized
+
+% The next thing is the Preface (``Acknowledgements'').
+% No standard environment for that, so we'll format it by hand.
+%
+%\begin{center}
+%	\textbf{Acknowledgements}
+%\end{center}
+
+%@@ your acks
+
+\clearpage
+
+
+% Now comes the Table of Contents, really easy in LaTeX. you never
+% have to worried about it. (Think of all the hours you would
+% have wasted in Word getting this thing updated without crashing
+% the system) :).
+
+\tableofcontents
+
+% List of Figures if any.
+% This will catch all objects enclosed in \begin{figure}\end{figure}
+% statements.
+\listoffigures
+
+% List of tables, if any.
+% This will catch all objects enclosed in \begin{table}\end{table}
+% statements.
+%\listoftables
+
+
+% Separation between front matterand text
+
+\clearpage
+
+%  Arabic numbering for the main text
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% 
+% Since this is a ``report'', the topmost level of hierarchy is
+% ``Chapter'', not section as you may be used to. Chapters are
+% enumerated starting from 1, so Sections are 1.1, Subsections are
+% 1.1.1, subsubsections don't get numbers. (You can change that, if
+% you want them to be called 1.1.1.1)
+%
+
+%@@ your text!
+% In case you want to put the actual body prose into a different file
+% \input{filename}
+
+\chapter{Problem Description}
+\label{ch:Problem Description}
+
+There is a lack of work attempting to find whether there is a difference between children and adults with regard to how the quality of digital learning is effected by the design of a user interface and presentation of the learning material. \todo{back this up}
+
+\chapter{Related Work}
+\label{ch:Related Work}
+
+\section{Measuring Learning}
+
+Kraiger, Ford, and Salas \cite{kraiger1993application}
+
+\subsection{Learning in Cognitive Psychology}
+
+\chapter{Methodology}
+\label{ch:Methodology}
+
+Before the experiment begins, the participant is asked to identify which age group they belong to. If the participant is a minor, a parent or guardian is requested so that informed consent may be made.
+
+The experiment consists of two phases: an initial learning phase which attempts to teach the participant the information they will need to complete the testing phase that follows. The goal is to attempt to measure how variations in the presentation of the learning phase effect recall and application of knowledge in the testing phase. Participants are anonymous are not monitored by an observer while taking part in the trial. Participants are given the option to cease participation in their trial at any time for any reason with no consequence, and metrics collected by the system are only retained if the participant gave consent to do so at the end of the trial.
+
+In the learning phase of the experiment, participants are randomly given one variation of the learning material. The variation between the learning material is defined by the random selection of specific options at each of the number\todo{Specify!} of variable points. All options modify the presentation of the learning material.
+
+The learning material consists of a set of number to color associations. How this information is presented varies in the following ways: The continue button will either resemble the back button in stylization or it will be larger and green. The color of the number will either match the associated color or it won't. A static cartoon character graphic "presenting" the learning material will either be present or it won't.
+
+After compeleting the learning phase of the experiment, a one minute break is enforced before the participant may continue into the testing phase of the experiment. The intention is to limit the impact of short term memory on the results of the testing phase.
+
+In the testing phase of the experiment, the participant is presented with a series of colored squares and asked to select the associated number. The participant is allowed as much time as they want. The participant is not informed of whether or not they selected the correct answer after they select their answer. There are thirty trials before the end of the testing phase of the experiment. The average time taken to respond as well as the ratio of correct responses is taken, and recorded given participant consent.
+
+\section{Anonymity and Participant Protection}
+
+While an argument may be made that the variation of the learning phase may result in an unique identifying combination of options, the fact that the experiment is administered by an automated system that does not monitor the participant in any way other than the collected metrics results in the dataset being completely anonymous. The dataset will not be published, as, if it were, a participant could view the dataset and, given that they had a unique variation of the learning phase of the experiment, identify their entry in the dataset (as the participant is the only observer of their own trial).
+
+Additionally, before beginning the experiment the participant is informed of the structure of the experiment and their right to cease participation at any time with no penalty. They are also informed that their results will not be recorded until they have given consent following the conclusion of the experiment.
+
+\section{Participant Selection Criteria}
+
+Participants consist of four groups of people: people ages 5--12, 13--17, 18--24, and 25+. Metrics for each group are collected seperately. The intention is to identify any differences between the four groups and how they respond to the different variations of the learning material.
+
+Excluded from the research population are people who are blind, color blind, people who can not read English, and people who can not operate a computer unaided.\todo{Maybe synthesia too?} Full color vision is required to complete the testing phase of the experiment. Additionally, because the experiment is administered by an automated system, the participant must be able read English to read the instructions and disclosure agreement\todo{Is this the right term?}. The participant must be able to operate the computer the use to participate unaided in order to properly participate in the experiment.
+
+\section{Data Analysis}
+
+The data was analyized by breaking it into each of the participant groups before performing a polynomial linear regression with each subset of the data. Features were selected using lasso regression\todo{Cite some explanation} utilizing cross validation to identify the parameters for the lasso regression that provide the best model. In the incredibly likely event that there were fewer than 100 members of each group, the dataset was first modified using the bootstrap method to make it more suitable for the application of machine learning.\todo{Tense is weird?}
+
+The coeficients of the selected model for each group were compared in an attempt to find differences between the groups with regards to the relations of predictors to collected metrics.\todo{All future tense for IRB version}
+
+\chapter{Application Design}
+\label{ch:Overall Design}
+
+Application design and implementation of methodology
+
+\section{Application for the Experiment}
+
+The application for conducting the experiment detailed in chapter \ref{ch:Methodology}: Methodology is web application that is hosted using GitHub's static website hosting that connects from the client-side to a database hosted elsewhere\todo{Figure out where you can host this} in order to record the results of the experiment given participant consent.
+
+SEND SPECIFICALLY FORMATTED EMAILS????
+
+\subsection{Demonstration mode}
+
+In the event that the application can not connect to the database, it will enter demonstration mode. In demonstration mode, there is first a notice to inform the user that their results can not be submitted at the end of the trial. Additionally, there is bold text in the upper left hand corner of the screen reading "Demonstration Mode" throughout the entire duration of the trial. The trial proceeds as normal in all other regards.
+
+\section{Application for Data Analysis}
+
+\chapter{Results and Conclusions}
+\label{ch:Results and Conclusions}
+
+This is waiting on experiment results!\todo{Write this section}
+
+\chapter{Limitations and Future Work}
+\label{ch:Limitations and Future Work}
+
+Sample size is probably bad. Haven't actually run this yet so like, don't know that yet.\todo{Write this section}
+
+\bibliographystyle{alpha}
+\bibliography{ReportBibliography}
+
+% which assumes a file foo.bib in your working directory.
+% The word ``Bibliography'' will appear in your document as soon as
+% you used ``bibtex'' on the command line.
+%
+
+\begin{appendices}
+
+\chapter{Application Source Code}
+\label{ch:App Source Code}
+
+\end{appendices}
+
+\end{document}
+
+
+
+
+
+
+
+
+
