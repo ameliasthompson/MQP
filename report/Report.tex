@@ -69,7 +69,7 @@
 
    {\large 
 	\textbf{
-	 Placeholder Title
+	 The Impact of User Interface on Games for Teaching Children
 	}
    }
 
@@ -203,18 +203,18 @@ Placeholder abstract
 % \input{filename}
 
 \chapter{Problem Description}
-\label{ch:Problem Description}
 
-There is a lack of work attempting to find whether there is a difference between children and adults with regard to how the quality of digital learning is effected by the design of a user interface and presentation of the learning material. \todo{back this up}
+There is a lack\todo{back this up} of work attempting to find whether there is a difference between children and adults with regard to how the quality of digital learning is effected by the design of a user interface and presentation of the learning material. Differences between what elements of user interfaces positively or negatively impact learning outcomes of seperate age groups would indicate that, for the efficacy of games for teaching children, further research would need to be done into how common design principles change when working with children.
+
+We intend to contribute toward resolving this by designing and running an experiment to measure a learning outcome that all ages capable of operating a computer may participate in. Our goal is to attempt to identify any differences in the impact of variations of the user interface present in the experiment on the learning outcomes of people of different age groups.
+
+Unfortunately the ongoing COVID-19 pandemic necessitates a remote approach to running an experiment, which makes obtaining a controlled environment for running the experiment borderline impossible for us. We chose to adapt to the situation by developing a web application rather than a desktop application for the purpose of allowing voluntary participants to self-administer the experiment from their own homes. This has the added benefit of bolstering the anonymity of participation.
 
 \chapter{Related Work}
-\label{ch:Related Work}
 
-\section{Measuring Learning}
+\section{Measuring Learning Outcomes}
 
-Kraiger, Ford, and Salas \cite{kraiger1993application}
-
-\subsection{Learning in Cognitive Psychology}
+Kraiger, Ford, and Salas \cite{kraiger1993application} define learning outcomes with three conceptual categories: cognitive outcomes, skill-based outcomes, and affective outcomes. Cognitive outcomes include aquisition of verbal knowledge, knowledge organization, and cognitive strategies. Of the three, verbal knowledge is the most familiar; it represents what we traditionally view as the product of learning (increased knowledge of a subject) and it is by far the easiest to measure, as it may be measured using methods such as a standard multiple choice quiz or free recall quiz. These measurment methods lend themselves well to short form computerized applications, however teaching verbal knowledge within our constraints (a short web application) is prohibitively difficult; thus we choose to focus on generating and measuring declarative knowledge-based learning outcomes as it is something Kraiger, Ford, and Salas acknowledge to be similar to verbal knowledge-based learning outcomes. Thankfully, according to Dacin and Mitchell \cite{dacin1986measurement}, declarative knowledge may be measured in much the same way.
 
 \chapter{Methodology}
 \label{ch:Methodology}
@@ -223,9 +223,9 @@ Before the experiment begins, the participant is asked to identify which age gro
 
 The experiment consists of two phases: an initial learning phase which attempts to teach the participant the information they will need to complete the testing phase that follows. The goal is to attempt to measure how variations in the presentation of the learning phase effect recall and application of knowledge in the testing phase. Participants are anonymous are not monitored by an observer while taking part in the trial. Participants are given the option to cease participation in their trial at any time for any reason with no consequence, and metrics collected by the system are only retained if the participant gave consent to do so at the end of the trial.
 
-In the learning phase of the experiment, participants are randomly given one variation of the learning material. The variation between the learning material is defined by the random selection of specific options at each of the number\todo{Specify!} of variable points. All options modify the presentation of the learning material.
+In the learning phase of the experiment, participants are randomly given one variation of the learning material. The variation between the learning material is defined by the random selection of specific options at each of the number of variable points. All options modify the presentation of the learning material.
 
-The learning material consists of a set of number to color associations. How this information is presented varies in the following ways: The continue button will either resemble the back button in stylization or it will be larger and green. The color of the number will either match the associated color or it won't. A static cartoon character graphic "presenting" the learning material will either be present or it won't.
+The learning material consists of a set of number to color associations. How this information is presented varies in the following ways: The continue button will either resemble the back button in stylization or it will be larger and green. The color of the number will either match the associated color or it won't. A static cartoon character graphic "presenting" the learning material will either be present or it won't. Each association is either present on its own page with a back and continue button, or all associations share a long page that must be scrolled down to reach a continue button that proceeds to the next phase.
 
 After compeleting the learning phase of the experiment, a one minute break is enforced before the participant may continue into the testing phase of the experiment. The intention is to limit the impact of short term memory on the results of the testing phase.
 
@@ -241,7 +241,7 @@ Additionally, before beginning the experiment the participant is informed of the
 
 Participants consist of four groups of people: people ages 5--12, 13--17, 18--24, and 25+. Metrics for each group are collected seperately. The intention is to identify any differences between the four groups and how they respond to the different variations of the learning material.
 
-Excluded from the research population are people who are blind, color blind, people who can not read English, and people who can not operate a computer unaided.\todo{Maybe synthesia too?} Full color vision is required to complete the testing phase of the experiment. Additionally, because the experiment is administered by an automated system, the participant must be able read English to read the instructions and disclosure agreement\todo{Is this the right term?}. The participant must be able to operate the computer the use to participate unaided in order to properly participate in the experiment.
+Excluded from the research population are people who are blind, color blind, people who can not read English, and people who can not operate a computer unaided.\todo{Maybe synthesia too?} Full color vision is required to complete the testing phase of the experiment. Additionally, because the experiment is administered by an automated system, the participant must be able read English to read the instructions and disclosure agreement\todo{Is this the right term?}. The participant must be able to operate the computer they use to participate unaided in order to properly participate in the experiment, but children are not expected to understand the structure of the experiment without the required assistance of a parent or guardian.
 
 \section{Data Analysis}
 
@@ -250,15 +250,14 @@ The data was analyized by breaking it into each of the participant groups before
 The coeficients of the selected model for each group were compared in an attempt to find differences between the groups with regards to the relations of predictors to collected metrics.\todo{All future tense for IRB version}
 
 \chapter{Application Design}
-\label{ch:Overall Design}
 
-Application design and implementation of methodology
+There are two applications in this project: an web application for administering the experiment, and a local application used to analyize the generated data with machine learning. The source code for both may be found in appendix \ref{ch:App Source Code}
 
 \section{Application for the Experiment}
 
-The application for conducting the experiment detailed in chapter \ref{ch:Methodology}: Methodology is web application that is hosted using GitHub's static website hosting that connects from the client-side to a database hosted elsewhere\todo{Figure out where you can host this} in order to record the results of the experiment given participant consent.
+The application for conducting the experiment detailed in chapter \ref{ch:Methodology}: Methodology is web application that is hosted using GitHub pages that connects from the client-side to a database hosted elsewhere\todo{Figure out where you can host this} in order to record the results of the experiment (given participant consent).
 
-SEND SPECIFICALLY FORMATTED EMAILS????
+SEND SPECIFICALLY FORMATTED EMAILS???? This is probably incredibly insecure
 
 \subsection{Demonstration mode}
 
@@ -267,14 +266,12 @@ In the event that the application can not connect to the database, it will enter
 \section{Application for Data Analysis}
 
 \chapter{Results and Conclusions}
-\label{ch:Results and Conclusions}
 
 This is waiting on experiment results!\todo{Write this section}
 
 \chapter{Limitations and Future Work}
-\label{ch:Limitations and Future Work}
 
-Sample size is probably bad. Haven't actually run this yet so like, don't know that yet.\todo{Write this section}
+Sample size is probably bad. Haven't actually run this yet so like, don't know that yet. Short timescale of experiment also bad\todo{Write this section}
 
 \bibliographystyle{alpha}
 \bibliography{ReportBibliography}
@@ -288,6 +285,14 @@ Sample size is probably bad. Haven't actually run this yet so like, don't know t
 
 \chapter{Application Source Code}
 \label{ch:App Source Code}
+
+The source files for the applications in this project as well as the source files for generating this report with \LaTeX can be found in GitHub in the following repository:\todo{There isn't actually any source code because it isn't written yet}
+
+\noindent\url{https://github.com/ameliasthompson/MQP}
+
+\noindent Additionally, the live version of the web app can be found on the GitHub pages for the above repo:\todo{It's a placeholder page right now}
+
+\noindent\url{https://ameliasthompson.github.io/MQP/}
 
 \end{appendices}
 
