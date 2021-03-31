@@ -31,15 +31,21 @@ function consentListener() {
 function setupDisclaimer() {
     var agefield = document.getElementById('agefield');
     var consentbox = document.getElementById('consentbox');
+    var contbutton = document.getElementById('continuebutton');
 
     // Make sure these are all set correctly.
     agefield.value = null;
     consentbox.checked = false;
-    document.getElementById('continuebutton').disabled = true;
+    contbutton.disabled = true;
 
     // Register listeners.
     agefield.addEventListener('keyup', consentListener);
     consentbox.addEventListener('change', consentListener);
+
+    contbutton.addEventListener('click', () => {
+        setupLearning();
+    })
+
 
     document.getElementById('disclaimer').hidden = false;
 }
