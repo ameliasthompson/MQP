@@ -1,0 +1,168 @@
+\documentclass[12pt]{article}
+
+% this enables correct linespacing and graphics inclusion via 
+%``\includegraphics''
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Comment this out before generating final draft
+\setlength{\marginparwidth}{2cm}
+
+%
+\usepackage{pdfpages}
+\usepackage[toc,page]{appendix}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{subfigure}
+
+\usepackage{titlesec}
+
+
+% leave 1.5in margin to the left and 1in margin to the other
+% sides. Don't print page number in the margin (but rather above it)
+\setlength{\textheight}{8.63in}
+\setlength{\textwidth}{5.9in}
+\setlength{\topmargin}{-0.2in}
+\setlength{\oddsidemargin}{0.3in}
+\setlength{\evensidemargin}{0.3in}
+\setlength{\headsep}{0.0in}
+
+
+
+% Start 
+% =================================================
+\begin{document}
+	
+%forces some specially formatted text to wrap to the next line if it overfills h-box
+\sloppy
+
+% First things first: The Titlepage
+% This is the recommended format by the library
+%
+
+
+% Define \brk as a command for leaving a little vertical space. Makes
+% the titlepage easier to read - normally, this is NOT GOOD LATEX
+% STYLE!!!
+%
+\newcommand{\brk}{\vspace*{0.18in}}
+
+% No page number on the title page
+\thispagestyle{empty}
+
+% Center the whole title page
+\begin{center}
+
+\brk
+
+% Large font and bold face for the headline. Try to keep it at one or
+% two lines. Headlines over two lines will mess up the spacing, and you have to
+% manually finetune it. Note that the line break in the SOURCE CODE
+% does not affect the line breaking in the output file. If you want
+% hardcoded line breaks, you have to mark them with a double backslash (\\)
+
+   {\large 
+	\textbf{
+	 The Impact of User Interface on Games for Teaching Children Methodology
+	}
+   }
+
+
+\brk
+by
+
+\brk
+% insert your name here. 
+Maximilian Thompson
+
+\end{center}
+
+\newpage
+
+% This is the command for doublespacing when you use the setspace
+% package
+% Please do NOT use \baselinestretch, this will mess up everything,
+% cause earthquakes, tornados and lots of questions for me...
+% If you need a singlespaced paragraph (BAD STYLE!!!), use
+% \singlespacing or \onehalfspacing and enclose it together with the
+% paragraph in braces {\singlespacing This is my text... blah blah blah}
+%
+\doublespacing
+
+
+\begin{abstract}
+A web application is used to autonomously run an experiment on the effects of user interface design on learning.
+\end{abstract}
+
+% Roman page numbers for front matter
+
+\pagenumbering{roman} % or {Roman} if you like them capitalized
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+%  Arabic numbering for the main text
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Introduction}
+
+For the MQP "Games for Teaching Children" I intend to conduct an experiment on both how the design of a user interface effects computerized learning and on how this effect may change depending on age. I will conduct the experiment autonomously using a web application I have developed in an effort to eliminate contact and increase accessibility. The web application and its source code will be publicly available, but data collection will end following the conclusion of the study.
+
+\section{Methodology}
+\label{ch:Methodology}
+
+Before the experiment begins, the participant is asked to identify which age group they belong to. If the participant is a minor, a parent or guardian is requested so that informed consent may be made. Following informed consent, the participant will be presented with instructions for completing the experiment.
+
+The experiment consists of two phases: an initial learning phase which attempts to teach the participant the information they will need to complete the testing phase that follows. The goal is to attempt to measure how variations in the presentation of the learning phase effect recall and application of knowledge in the testing phase. Participants are anonymous and are not monitored by an observer while taking part in the trial. Participants are given the option to cease participation in their trial at any time for any reason with no consequence, and metrics collected by the system are only retained if the participant gave consent to do so at the end of the trial.
+
+In the learning phase of the experiment, participants are randomly given one variation of the learning material. The variation between the learning material is defined by the random selection of specific options at each of the number of variable points. All options modify the presentation of the learning material.
+
+The learning material consists of a set of number to color associations. How this information is presented varies in the following ways: The continue button will either resemble the back button in stylization or it will be larger and green. The color of the number will either match the associated color or it won't. A static cartoon character graphic "presenting" the learning material will either be present or it won't. Each association is either present on its own page with a back and continue button, or all associations share a long page that must be scrolled down to reach a continue button that proceeds to the next phase.
+
+After compeleting the learning phase of the experiment, a one minute break is enforced during which the participant is asked to count backward from one hundred. The intention is to limit the impact of short term memory on the results of the testing phase by interfering with rehersal and delaying application of information.\cite{cowan2008differences}
+
+In the testing phase of the experiment, the participant is presented with a series of colored squares and asked to select the associated number. The participant is allowed as much time as they want. The participant is not informed of whether or not they selected the correct answer after they select their answer. There are thirty trials before the end of the testing phase of the experiment. The average time taken to respond is recorded.
+
+\subsection{Data Collection}
+
+Following the conclusion of the experiment, the participant will be presented with all of the data generated by their participation and will be asked, given that they still consent, to submit the data to a linked SurveyMonkey survey. This has been chosen over automatically recording the data due to the limitations of GitHub Pages, and the inability to use a database for data collection.
+
+The data collected will be the participant's age, the learning material variation options selected by the web application, and the average amount of time it took the participant to respond to each trial.
+
+\subsection{Anonymity and Participant Protection}
+
+While an argument may be made that the variation of the learning phase may result in an unique identifying combination of options, the fact that the experiment is administered by an automated system that does not monitor the participant in any way other than the collected metrics results in the dataset being completely anonymous. The dataset will not be published as, if it were, a participant could view the dataset and, given that they had a unique variation of the learning phase of the experiment and their age, identify their entry in the dataset (as the participant is the only observer of their own trial).
+
+Additionally, before beginning the experiment the participant is informed of the structure of the experiment and their right to cease participation at any time with no penalty. They are also informed that their results will not be recorded until they have given consent and submitted the results through the provided survey following the conclusion of the experiment.
+
+\subsection{Participant Selection Criteria}
+
+Participants consist of WPI students and relatives of WPI students of ages 13 and up. Excluded from the research population are people who are blind, color blind, people who can not read English, and people who can not operate a computer unaided. Full color vision is required to complete the testing phase of the experiment. Additionally, because the experiment is administered by an automated system, the participant must be able read English to read the instructions and informed consent form. The participant must be able to operate the computer they use to participate unaided in order to properly participate in the experiment, but children are not expected to understand the structure of the experiment without the required assistance of a parent or guardian.
+
+\subsection{Data Analysis}
+
+The data will be analyzed by performing a polynomial linear regression \cite{peckov2012machine} with the data. All options for the display of learning material will be coded as dummy variables. Features will be selected using lasso regression utilizing cross validation to identify the parameters for the lasso regression that provide the best model. If there are fewer than 100 participants, the bootstrap method \cite{kohavi1995study} will be applied to enhance the dataset.
+
+Additionally, the dataset will be broken into age ranges with the above method repeated to produce additional models for specific age ranges. The intent of doing this is to see if the coeficients of the selected model for each age group differs from the coeficients of the overall model and from each other.
+
+\bibliographystyle{alpha}
+\bibliography{ReportBibliography}
+
+\end{document}
+
+
+
+
+
+
+
+
+
