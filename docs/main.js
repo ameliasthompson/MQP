@@ -19,7 +19,7 @@ function consentListener() {
     var agefieldval = document.getElementById('agefield').value;
 
     // Bounds check and check for consent
-    if (agefieldval != null && agefieldval > 0
+    if (agefieldval != null && agefieldval >= 13
         && document.getElementById('consentbox').checked) {
             document.getElementById('continuebutton').disabled = false;
         
