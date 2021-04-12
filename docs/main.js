@@ -104,6 +104,7 @@ function setupDisclaimer() {
 
     // Register listeners.
     agefield.addEventListener('change', consentListener);
+    agefield.addEventListener('keyup', consentListener);
     consentbox.addEventListener('change', consentListener);
 
     contbutton.addEventListener('click', () => {
