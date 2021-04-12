@@ -12,6 +12,8 @@ var trials = [];
 var curTrial = 0;
 var beginTrial;
 
+var age;
+
 function main() {
     var workspace = document.getElementById('workspace');
 
@@ -105,6 +107,7 @@ function setupDisclaimer() {
     consentbox.addEventListener('change', consentListener);
 
     contbutton.addEventListener('click', () => {
+        age = agefield.value;
         setupLearning();
     })
 
@@ -227,7 +230,7 @@ function testButtonListener() {
             document.getElementById('colbuttons').hidden = false;
         }
     } else {
-        // Proceed to results
+        setupResults()
     }
 
     // Start timer for next trial
@@ -274,4 +277,29 @@ function setupTest() {
     beginTrial = new Date().getTime();
 
     document.getElementById('testing').hidden = false;
+}
+
+function setupResults() {
+    document.getElementById('testing').hidden = true;
+
+    // Get average response time
+    var count = 0;
+    var total = 0;
+    for (var i = 0; i < 30; i++) {
+        // Filter out error trials if they exist (they shouldn't)
+        if (trials[i]["response"] != -1) {
+            count++;
+            total += trials[i]["response"];
+        }
+    }
+
+    // Set the results elements
+    document.getElementById('bigcontinue').textContent = bigcontinue;
+    document.getElementById('colorednumber').textContent = colorednumber;
+    document.getElementById('cartoon').textContent = cartoon;
+    document.getElementById('continuous').textContent = continuous;
+    document.getElementById('ageres').textContent = age;
+    document.getElementById('responsetimeres').textContent = Math.round(total / count);
+
+    document.getElementById('results').hidden = false;
 }
