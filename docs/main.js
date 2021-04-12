@@ -175,7 +175,7 @@ function setupLearning() {
 
                 // Change the text on the continue button if it's been changed
                 forwbutton.textContent = "Continue";
-            
+
             } else {
                 print("Back button should be disabled if you're on the first association!");
             }
@@ -183,7 +183,7 @@ function setupLearning() {
 
         // Show first association
         associations[0].hidden = false;
-    
+
     } else {
         // Show all associations
         associations[0].hidden = false;
