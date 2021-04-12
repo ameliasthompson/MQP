@@ -56,9 +56,9 @@ function setupLearning() {
     // Label each color
     var labels = document.getElementsByClassName('collabel');
     labels[0].textContent = red.toString() + " = ";
-    labels[0].textContent = green.toString() + " = ";
-    labels[0].textContent = blue.toString() + " = ";
-    labels[0].textContent = black.toString() + " = ";
+    labels[1].textContent = green.toString() + " = ";
+    labels[2].textContent = blue.toString() + " = ";
+    labels[3].textContent = black.toString() + " = ";
 
     // Set up buttons
     var associations = document.getElementsByClassName('association');
