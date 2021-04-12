@@ -75,6 +75,13 @@ function setupLearning() {
     labels[2].textContent = blue.toString() + " = ";
     labels[3].textContent = black.toString() + " = ";
 
+    if (colorednumber) {
+        labels[0].setAttribute('style', "color: red");
+        labels[1].setAttribute('style', "color: green");
+        labels[2].setAttribute('style', "color: blue");
+        labels[3].setAttribute('style', "color: black");
+    }
+
     // Get elements
     var associations = document.getElementsByClassName('association');
     var forwbutton = document.getElementById('forwardbutton');
