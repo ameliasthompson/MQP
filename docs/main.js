@@ -8,6 +8,8 @@ var colorednumber = false;
 var cartoon = false;
 var continuous = false;
 
+var trials = [];
+
 function main() {
     var workspace = document.getElementById('workspace');
 
@@ -27,7 +29,45 @@ function main() {
     cartoon = Math.random() < 0.5;
     continuous = Math.random() < 0.5;
 
+    // Randomly set trials
+    for (var i = 0; i < 30; i++) {
+        var num = getRandomColorNum()
+        trials.push({
+            "coltrial": Math.random() < 0.5, // true if color first false if number first
+            "num": num,
+            "color": getColorFromNum(num),
+            "response": -1 // number of milliseconds
+        })
+    }
+
     setupDisclaimer();
+}
+
+function getRandomColorNum() {
+    rand = Math.random()*4;
+    if (rand < 1) {
+        return red;
+    } else if (rand < 2) {
+        return green;
+    } else if (rand < 3) {
+        return blue;
+    } else {
+        return black;
+    }
+}
+
+function getColorFromNum(n) {
+    if (n == red) {
+        return "red";
+    } else if (n == green) {
+        return "green";
+    } else if (n == blue) {
+        return "blue";
+    } else if (n == black) {
+        return "black";
+    } else {
+        return "error";
+    }
 }
 
 function consentListener() {
