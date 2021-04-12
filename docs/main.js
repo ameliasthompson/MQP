@@ -127,10 +127,24 @@ function setupLearning() {
     labels[3].textContent = black.toString() + " = ";
 
     if (colorednumber) {
-        labels[0].setAttribute('style', "color: red");
-        labels[1].setAttribute('style', "color: green");
-        labels[2].setAttribute('style', "color: blue");
-        labels[3].setAttribute('style', "color: black");
+        labels[0].setAttribute('style', "color: red;");
+        labels[1].setAttribute('style', "color: green;");
+        labels[2].setAttribute('style', "color: blue;");
+        labels[3].setAttribute('style', "color: black;");
+    }
+
+    if (cartoon) {
+        var dogs = document.getElementsByClassName('dog');
+        dogs[0].hidden = false;
+        dogs[1].hidden = false;
+        dogs[2].hidden = false;
+        dogs[3].hidden = false;
+        
+        // We also need to shrink the font a little
+        labels[0].setAttribute('style', labels[0].getAttribute('style') + "font-size: 150px;")
+        labels[1].setAttribute('style', labels[1].getAttribute('style') + "font-size: 150px;")
+        labels[2].setAttribute('style', labels[2].getAttribute('style') + "font-size: 150px;")
+        labels[3].setAttribute('style', labels[3].getAttribute('style') + "font-size: 150px;")
     }
 
     // Get elements
