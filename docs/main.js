@@ -9,6 +9,8 @@ var cartoon = false;
 var continuous = false;
 
 var trials = [];
+var curTrial = 0;
+var beginTrial;
 
 function main() {
     var workspace = document.getElementById('workspace');
@@ -156,7 +158,7 @@ function setupLearning() {
                 backbutton.disabled = false;
 
             } else {
-                // Continue to testing phase
+                setupTest();
             }
         });
 
@@ -192,7 +194,7 @@ function setupLearning() {
         // Set up continue button
         forwbutton.textContent = "Finish";
         forwbutton.addEventListener('click', () => {
-            // Continue to testing phase
+            setupTest();
         })
 
         // Disable back button because it isn't actually used in this mode
@@ -200,4 +202,76 @@ function setupLearning() {
     }
 
     document.getElementById('learning').hidden = false;
+}
+
+function testButtonListener() {
+    // Record results of this trial
+    trials[curTrial]["response"] = new Date().getTime() - beginTrial;
+
+    // Set up the next trial
+    curTrial++;
+    if (curTrial < 30) {
+        var box = document.getElementById('testbox');
+        if (trials[curTrial]["coltrial"]) {
+            // Color first
+            box.textContent = "";
+            box.setAttribute('style', "background-color: " + trials[curTrial]["color"]);
+            document.getElementById('numbuttons').hidden = false;
+            document.getElementById('colbuttons').hidden = true;
+
+        } else {
+            // Number first
+            box.textContent = trials[curTrial]["num"];
+            box.setAttribute('style', "background-color: white");
+            document.getElementById('numbuttons').hidden = true;
+            document.getElementById('colbuttons').hidden = false;
+        }
+    } else {
+        // Proceed to results
+    }
+
+    // Start timer for next trial
+    beginTrial = new Date().getTime();
+}
+
+function setupTest() {
+    document.getElementById('learning').hidden = true;
+
+    // Set up first trial
+    var box = document.getElementById('testbox');
+    if (trials[0]["coltrial"]) {
+        // Color first
+        box.textContent = "";
+        box.setAttribute('style', "background-color: " + trials[0]["color"]);
+        document.getElementById('numbuttons').hidden = false;
+        document.getElementById('colbuttons').hidden = true;
+
+    } else {
+        // Number first
+        box.textContent = trials[0]["num"];
+        box.setAttribute('style', "background-color: white");
+        document.getElementById('numbuttons').hidden = true;
+        document.getElementById('colbuttons').hidden = false;
+    }
+
+    // Set up listeners
+    document.getElementById('but1').addEventListener('click', testButtonListener);
+    document.getElementById('but2').addEventListener('click', testButtonListener);
+    document.getElementById('but3').addEventListener('click', testButtonListener);
+    document.getElementById('but4').addEventListener('click', testButtonListener);
+    document.getElementById('but5').addEventListener('click', testButtonListener);
+    document.getElementById('but6').addEventListener('click', testButtonListener);
+    document.getElementById('but7').addEventListener('click', testButtonListener);
+    document.getElementById('but8').addEventListener('click', testButtonListener);
+    document.getElementById('but9').addEventListener('click', testButtonListener);
+    document.getElementById('but0').addEventListener('click', testButtonListener);
+    document.getElementById('butred').addEventListener('click', testButtonListener);
+    document.getElementById('butgreen').addEventListener('click', testButtonListener);
+    document.getElementById('butblue').addEventListener('click', testButtonListener);
+    document.getElementById('butblack').addEventListener('click', testButtonListener);
+
+    // Start timer for first trial
+    beginTrial = new Date().getTime();
+
+    document.getElementById('testing').hidden = false;
 }
