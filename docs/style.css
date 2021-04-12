@@ -4,17 +4,55 @@ form {
 
 .colbox {
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
 }
 
 #testbox {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
+    font-size: 250px;
+    display:flex;
+    justify-items: center;
+    align-items: center;
 }
 
 .colbutton {
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
+}
+
+body {
+    width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#testingcont {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    border-style: double;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.association {
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    border-style: double;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.collabel {
+    font-size: 200px;
 }
