@@ -3,14 +3,29 @@ var green = 0;
 var blue = 0;
 var black = 0;
 
+var bigcontinue = false;
+var colorednumber = false;
+var cartoon = false;
+var continuous = false;
+
 function main() {
     var workspace = document.getElementById('workspace');
 
-    // Assign values to each color (static for now, but random later)
-    red = 1;
-    green = 7;
-    blue = 2;
-    black = 8;
+    // Assign unique values to each color
+    do {
+        red = Math.floor(Math.random()*10);
+        green = Math.floor(Math.random()*10);
+        blue = Math.floor(Math.random()*10);
+        black = Math.floor(Math.random()*10);
+    } while (red == green || red == blue || red == black
+            || green == blue || green == black
+            || blue == black);
+    
+    // Randomly select flags
+    bigcontinue = Math.random() < 0.5;
+    colorednumber = Math.random() < 0.5;
+    cartoon = Math.random() < 0.5;
+    continuous = Math.random() < 0.5;
 
     setupDisclaimer();
 }
