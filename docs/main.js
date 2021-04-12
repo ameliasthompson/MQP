@@ -31,13 +31,18 @@ function main() {
 
     // Randomly set trials
     for (var i = 0; i < 30; i++) {
-        var num = getRandomColorNum()
-        trials.push({
-            "coltrial": Math.random() < 0.5, // true if color first false if number first
-            "num": num,
-            "color": getColorFromNum(num),
-            "response": -1 // number of milliseconds
-        })
+        var trial;
+        do {
+            var num = getRandomColorNum()
+            trial = {
+                "coltrial": Math.random() < 0.5, // true if color first false if number first
+                "num": num,
+                "color": getColorFromNum(num),
+                "response": -1 // number of milliseconds
+            }
+        } while (i > 0 && num == trials[i-1]["num"]);
+
+        trials.push(trial);
     }
 
     setupDisclaimer();
