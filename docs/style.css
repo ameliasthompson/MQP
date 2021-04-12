@@ -7,3 +7,14 @@ form {
     width: 100px;
     height: 100px;
 }
+
+#testbox {
+    width: 100px;
+    height: 100px;
+}
+
+.colbutton {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
