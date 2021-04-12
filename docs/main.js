@@ -75,54 +75,73 @@ function setupLearning() {
     labels[2].textContent = blue.toString() + " = ";
     labels[3].textContent = black.toString() + " = ";
 
-    // Set up buttons
+    // Get elements
     var associations = document.getElementsByClassName('association');
     var forwbutton = document.getElementById('forwardbutton');
     var backbutton = document.getElementById('backbutton')
-    var assocNum = 0;
-    var totAssoc = 4;
+    
+    if (!continuous) {
+        var assocNum = 0;
+        var totAssoc = 4;
 
-    forwbutton.addEventListener('click', () => {
-        assocNum++;
-        if (assocNum < totAssoc) {
-            // Show next association
-            associations[assocNum-1].hidden = true;
-            associations[assocNum].hidden = false;
+        forwbutton.addEventListener('click', () => {
+            assocNum++;
+            if (assocNum < totAssoc) {
+                // Show next association
+                associations[assocNum-1].hidden = true;
+                associations[assocNum].hidden = false;
 
-            // Change the text on the button if we're on the last one
-            if (assocNum == totAssoc - 1) {
-                forwbutton.textContent = "Finish";
+                // Change the text on the button if we're on the last one
+                if (assocNum == totAssoc - 1) {
+                    forwbutton.textContent = "Finish";
+                }
+
+                // Enable the back button
+                backbutton.disabled = false;
+
+            } else {
+                // Continue to testing phase
             }
+        });
 
-            // Enable the back button
-            backbutton.disabled = false;
+        backbutton.addEventListener('click', () => {
+            if (assocNum > 0) {
+                assocNum--;
 
-        } else {
+                // Show previous association
+                associations[assocNum+1].hidden = true;
+                associations[assocNum].hidden = false;
+
+                // Disable the back button if we're on the first one
+                if (assocNum == 0) backbutton.disabled = true;
+
+                // Change the text on the continue button if it's been changed
+                forwbutton.textContent = "Continue";
+            
+            } else {
+                print("Back button should be disabled if you're on the first association!");
+            }
+        });
+
+        // Show first association
+        associations[0].hidden = false;
+    
+    } else {
+        // Show all associations
+        associations[0].hidden = false;
+        associations[1].hidden = false;
+        associations[2].hidden = false;
+        associations[3].hidden = false;
+
+        // Set up continue button
+        forwbutton.textContent = "Finish";
+        forwbutton.addEventListener('click', () => {
             // Continue to testing phase
-        }
-    });
+        })
 
-    backbutton.addEventListener('click', () => {
-        if (assocNum > 0) {
-            assocNum--;
-
-            // Show previous association
-            associations[assocNum+1].hidden = true;
-            associations[assocNum].hidden = false;
-
-            // Disable the back button if we're on the first one
-            if (assocNum == 0) backbutton.disabled = true;
-
-            // Change the text on the continue button if it's been changed
-            forwbutton.textContent = "Continue";
-        
-        } else {
-            print("Back button should be disabled if you're on the first association!");
-        }
-    });
-
-    // Show first association
-    associations[0].hidden = false;
+        // Disable back button because it isn't actually used in this mode
+        backbutton.disabled = true;
+    }
 
     document.getElementById('learning').hidden = false;
 }
