@@ -87,6 +87,10 @@ function setupLearning() {
     var forwbutton = document.getElementById('forwardbutton');
     var backbutton = document.getElementById('backbutton')
     
+    if (bigcontinue) {
+        forwbutton.setAttribute('style', "color: white; background-color: green; font-size: 200%;");
+    }
+
     if (!continuous) {
         var assocNum = 0;
         var totAssoc = 4;
