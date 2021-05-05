@@ -144,7 +144,7 @@ Smith, Therese
 
 
 \begin{abstract}
-We attempt to experimentally identify a difference in how different user interface design elements effect different age groups' ability to learn new material, but we fall short due to a lack of reponses and the limitations of our web-based method of experimentation. We hope to inspire further and more relaible research into the line of questioning we present.
+We attempt to experimentally identify a difference in how different user interface design elements effect different age groups' ability to learn new material, but we fall short due to a lack of reponses and the limitations of our web-based method of experimentation. We hope to inspire further and more reliable research into the line of questioning we present.
 \end{abstract}
 
 % Roman page numbers for front matter
@@ -204,15 +204,15 @@ We attempt to experimentally identify a difference in how different user interfa
 
 \chapter{Problem Description}
 
-There is a lack of work attempting to find whether there is a difference between children and adults with regard to how the quality of digital learning is effected by the design of a user interface and presentation of the learning material. Differences between what elements of user interfaces positively or negatively impact learning outcomes of seperate age groups would indicate that, for the efficacy of games for teaching children, further research would need to be done into how common design principles change when working with children.
+There is a lack of work attempting to find whether there is a difference between children and adults with regard to how the quality of digital learning is effected by the design of a user interface and presentation of the learning material. Differences between what elements of user interfaces positively or negatively impact learning outcomes of separate age groups would indicate that, for the efficacy of games for teaching children, further research would need to be done into how common design principles change when working with children.
 
 We intend to contribute toward resolving this by designing and running an experiment to measure a learning outcome that all ages capable of operating a computer may participate in. Our goal is to attempt to identify any differences in the impact of variations of the user interface present in the experiment on the learning outcomes of people of different age groups.
 
-Unfortunately the ongoing COVID-19 pandemic necessitates a remote approach to running an experiment, which makes obtaining a controlled environment for running the experiment borderline impossible for us. We chose to adapt to the situation by developing a web application rather than a desktop application for the purpose of allowing voluntary participants to self-administer the experiment from their own homes. This has the added benefit of bolstering the anonymity of participation.
+Unfortunately the ongoing COVID-19 pandemic necessitates a remote approach to running an experiment, which makes obtaining a controlled environment for running the experiment borderline impossible for us. We chose to adapt to the situation by developing a web application rather than a desktop application for the purpose of facilitating voluntary participants to self-administer the experiment from their own homes. This has the added benefit of bolstering the anonymity of participation.
 
 \section{Measuring Learning Outcomes}
 
-Kraiger, Ford, and Salas \cite{kraiger1993application} define learning outcomes with three conceptual categories: cognitive outcomes, skill-based outcomes, and affective outcomes. Cognitive outcomes include aquisition of verbal knowledge, knowledge organization, and cognitive strategies. Of the three, verbal knowledge is the most familiar; it represents what we traditionally view as the product of learning (increased knowledge of a subject) and it is by far the easiest to measure, as it may be measured using methods such as a standard multiple choice quiz or free recall quiz. These measurment methods lend themselves well to short form computerized applications, however teaching verbal knowledge within our constraints (a short web application) is prohibitively difficult; thus we choose to focus on generating and measuring declarative knowledge-based learning outcomes as it is something Kraiger, Ford, and Salas acknowledge to be similar to verbal knowledge-based learning outcomes. Thankfully, according to Dacin and Mitchell \cite{dacin1986measurement}, declarative knowledge may be measured in much the same way.
+Kraiger, Ford, and Salas \cite{kraiger1993application} define learning outcomes with three conceptual categories: cognitive outcomes, skill-based outcomes, and affective outcomes. Cognitive outcomes include aquisition of verbal knowledge, knowledge organization, and cognitive strategies. Of the three, verbal knowledge is the most familiar; it represents what we traditionally view as the product of learning (increased knowledge of a subject) and it is by far the easiest to measure, as it may be measured using methods such as a standard multiple choice quiz or free recall quiz. These measurement methods lend themselves well to short form computerized applications, however teaching verbal knowledge within our constraints (a short web application) is prohibitively difficult; thus we choose to focus on generating and measuring declarative knowledge-based learning outcomes as it is something Kraiger, Ford, and Salas acknowledge to be similar to verbal knowledge-based learning outcomes. Thankfully, according to Dacin and Mitchell \cite{dacin1986measurement}, declarative knowledge may be measured in much the same way.
 
 \chapter{Methodology}
 \label{ch:Methodology}
@@ -223,7 +223,7 @@ The experiment consists of two phases: an initial learning phase which attempts 
 
 In the learning phase of the experiment, participants are randomly given one variation of the learning material. The variation between the learning material is defined by the random selection of specific options at each of the number of variable points. All options modify the presentation of the learning material.
 
-The learning material consists of a set of number to color associations. How this information is presented varies in the following ways: The continue button will either resemble the back button in stylization or it will be larger and green. The color of the number will either match the associated color or it won't. A static cartoon character graphic "presenting" the learning material will either be present or it won't. Each association is either present on its own page with a back and continue button, or all associations share a long page that must be scrolled down to reach a continue button that proceeds to the next phase.
+The learning material consists of a set of number to color associations. How this information is presented varies in the following ways: The continue button will either resemble the back button in stylization or it will be larger and green. The color of the number will either match the associated color or it won't. A static cartoon character graphic ``presenting" the learning material will either be present or it won't. Each association is either present on its own page with a back and continue button, or all associations share a long page that must be scrolled down to reach a continue button that proceeds to the next phase.
 
 After compeleting the learning phase of the experiment, a one minute break was intended to be enforced during which the participant is asked to count backward from one hundred. The intention is to limit the impact of short term memory on the results of the testing phase by interfering with rehersal and delaying application of information.\cite{cowan2008differences} However, this was not implemented do to a technical oversight.
 
@@ -254,7 +254,7 @@ Additionally, the dataset will be broken into age ranges with the above method r
 
 \chapter{Application Design}
 
-There were intended to be two applications in this project: an web application for administering the experiment, and a local application used to analyize the generated data with machine learning. Due to an insufficient number of responses to the experiment, the application for data analysis was never produced. The source code for the experiment administeration application may be found in appendix \ref{ch:App Source Code}
+There were intended to be two applications in this project: an web application for administering the experiment, and a local application used to analyize the generated data with machine learning. Due to an insufficient number of responses to the experiment, the application for data analysis was never produced. The source code for the experiment administration application may be found in appendix \ref{ch:App Source Code}
 
 \section{Application for the Experiment}
 
@@ -262,7 +262,7 @@ The application for conducting the experiment detailed in chapter \ref{ch:Method
 
 \subsection{Structure of Application}
 
-The application is a simple web application that is broken up into an HTML component, a vanilla javascript component, and a CSS component. The HTML component lays out a number of elements that are used to display each phase of the experiment. A majority of these elements are initially hidden, and over the course of application execution are both shown and hidden, as well as have their direct styling modified. Both elements with classes and elements with ids are used where applicable.
+The application is a simple web application that is broken up into an HTML component, a vanilla javascript component, and a CSS component. The HTML component lays out a number of elements that are used to display each phase of the experiment. A majority of these elements are initially hidden, and over the course of application execution are both shown and hidden, as well as have their direct styling modified. Both elements with classes and elements with identifiers are used where applicable.
 
 The CSS component of the web application simply provides a baseline styling to the application which is further modified with direct styling in the javascript to produce the effects required for the different variants of the learning material. Of note, the portion devoted to the learning phase and testing phase assume and enforce a specific absolute pixel size of the content area, and center the content area with the intention of creating a consistent experimental environment across multiple platforms.
 
@@ -283,7 +283,7 @@ Unfortunately we did not receive enough responses to our study to draw any reaso
 
 We obviously can not provide much more than speculation here, but it is safe to say that we expected there to be some difference between how different age ranges responded to the presence of different elements in the learning material. For instance, children of a younger age may have been more strongly effected by the presence of a cartoon character on the screen during the learning material. We hoped to see this in a difference between normalized response times of different groups given the presence of a specific feature or collection of features.
 
-Finding evidence of this would have provided a springboard for further exploring how the design of a user interface in an application for teaching children may need to differ from one for teaching adults. So although this research would nto have directly benefited the field of teaching children through games, it would have furthered research in a direction that may have one day caused great benefit. We hope that this line of questioning may be further explored in the future by other groups regardless of our failure to produce reliable evidence.
+Finding evidence of this would have provided a springboard for further exploring how the design of a user interface in an application for teaching children may need to differ from one for teaching adults. So although this research would not have directly benefited the field of teaching children through games, it would have furthered research in a direction that may have one day caused great benefit. We hope that this line of questioning may be further explored in the future by other groups regardless of our lack of time/responses to produce reliable evidence.
 
 \chapter{Limitations and Future Work}
 
